@@ -20,8 +20,8 @@ def findClosestEncounter(jd):
 
 #Settings and URL to conect to NASA API
 #Get your free API key from here: https://api.nasa.gov/
-today = date.today()
-ad_today = today.strftime("%Y-%m-%d")
+
+ad_today = date.today().strftime("%Y-%m-%d")
 url = "https://api.nasa.gov/neo/rest/v1/feed?start_date="+ad_today+"&end_date="+ad_today+"&api_key=[your keu]"
 
 
@@ -49,7 +49,7 @@ if "near_earth_objects" in jsn:
     diameter = round(dia_meter)
 
     #build the message
-    alert =" The nearest asteroid for today is "+ name+". It will be "+str(howclose)+" km away with a diameter of "+str(diameter)+" meters."
+    alert ="The nearest asteroid for today is "+ name+". It will be "+str(howclose)+" km away with a diameter of "+str(diameter)+" meters."
     
     #SMS client
     #Get your free API key from here: https://developers.messagebird.com/api/#api-endpoint
