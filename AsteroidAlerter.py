@@ -1,10 +1,16 @@
+"""
+This script combines 2 APIs and allows you to receive an SMS notification for the nearest object passing our planet daily.
+The data comes from NASA's Near-Earth Object Observations Program: https://www.nasa.gov/planetarydefense/neoo
+The SMS API is from Messagebird: https://messagebird.com/en/
+"""
+
 import requests
 from datetime import date
 import messagebird
 
 
 def findClosestEncounter(jd):
-    # for each and ten create array
+    # a simple function for discovering the nearest object for the day from all the registered objects
     asteroids = []
     for i in range(0, len(jd)):
         asteroids.insert(i,jd[i]['close_approach_data'][0]['miss_distance']['kilometers'])
