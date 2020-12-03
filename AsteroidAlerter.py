@@ -10,7 +10,7 @@ import messagebird
 
 
 def findClosestEncounter(jd):
-    # a simple function for discovering the nearest object for the day from all the registered objects
+    # a simple function for discovering the nearest object for the day from all registered objects
     asteroids = []
     for i in range(0, len(jd)):
         asteroids.insert(i,jd[i]['close_approach_data'][0]['miss_distance']['kilometers'])
@@ -55,8 +55,8 @@ if "near_earth_objects" in jsn:
     #Get your free API key from here: https://developers.messagebird.com/api/#api-endpoint
     sms = messagebird.Client("your API key here")
 
-    #Prepare and send the message to a phone nuber of your choice.
-
+    #Prepare and send the message to a phone number of your choice.
+    # Change the name "Asteroid" to something you want. It will appear as a sender
     message = sms.message_create(
         'Asteroid',
         '+yourphonenumner',
